@@ -25,4 +25,14 @@
     [self.contacts addObject:newContact];
 }
 
+- (void)printContact
+{
+    for (int contactNum = 0; contactNum < self.contacts.count; contactNum++) {
+        Contact *contactToPrint = [self.contacts objectAtIndex:contactNum];
+        
+        NSLog(@"%d: <%@>(%@)", contactNum, contactToPrint.name, contactToPrint.email);
+        
+    }
+}
+
 @end

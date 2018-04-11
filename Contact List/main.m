@@ -36,9 +36,7 @@ int main(int argc, const char * argv[]) {
                 
             }
             else if ([mainMenu isEqualToString:@"list"]) {
-                for (int i = 0; i < contactList.contacts.count; i++) {
-                    NSLog(@"");
-                }
+                [contactList printContact];
             }
             else if ([mainMenu isEqualToString:@"quit"]) {
                 gameOn = NO;
