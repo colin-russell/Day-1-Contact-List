@@ -16,11 +16,25 @@ int main(int argc, const char * argv[]) {
         ContactList *contactList = [[ContactList alloc] init];
         InputCollector *inputCollector = [[InputCollector alloc]init];
         
-        while (true) {
+        BOOL gameOn = YES;
+        
+        while (gameOn == YES) {
             
-            NSString *print = [inputCollector inputForPrompt:@"What would you like do next? new - Create a new contact list - List all contacts quit - Exit Application "];
+            NSString *mainMenu = [inputCollector inputForPrompt:@"What would you like do next? new - Create a new contact | list - List all contacts | quit - Exit Application "];
             
-            NSLog(@"%@", print);
+            if ([mainMenu isEqualToString:@"new"]) {
+                NSLog(@"NEW");
+            }
+            else if ([mainMenu isEqualToString:@"list"]) {
+                NSLog(@"LIST");
+            }
+            else if ([mainMenu isEqualToString:@"quit"]) {
+                gameOn = NO;
+            }
+            else {
+                NSLog(@"INVALID ENTRY");
+            }
+            
             
             
             
